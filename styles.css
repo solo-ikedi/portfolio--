@@ -1,0 +1,173 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    scroll-behavior: smooth;
+    transition: background 0.3s ease-in-out;
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: black;
+}
+
+.navbar {
+    transition: background 0.3s;
+}
+
+.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: black;
+}
+
+.light-mode .hero {
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+}
+
+/* Animated Background with Bubbles Falling Like Rain */
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.2), transparent 70%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: fallDown 10s infinite linear, changeColor 5s infinite alternate;
+}
+
+@keyframes fallDown {
+    from { transform: translateY(-100vh); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes changeColor {
+    0% { background-color: #ff007f; }
+    25% { background-color: #00bfff; }
+    50% { background-color: #ffdd00; }
+    75% { background-color: #ff4500; }
+    100% { background-color: #32cd32; }
+}
+
+/* Solomon Ikedi Falling Effect */
+.solomon-text {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgba(255, 193, 7, 0.7);
+    display: flex;
+    gap: 10px;
+    animation: fallText 8s infinite linear;
+}
+
+@keyframes fallText {
+    from { transform: translateX(-50%) translateY(-100px); opacity: 1; }
+    to { transform: translateX(-50%) translateY(100vh); opacity: 0; }
+}
+
+/* iPhone & Laptop Frames for Projects */
+laptop-frame {
+    width: 800px;
+    height: 500px;
+    background: #1f2937;
+    border-radius: 16px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #374151;
+    margin-bottom: 20px;
+}
+.laptop-frame::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 680px;
+    height: 50px;
+    background: #1f2937;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.iphone-frame {
+    width: 300px;
+    height: 400px;
+    background: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 20px rgba(255, 193, 7, 0.5);
+    margin: auto;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+}
+
+#iphone-project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+/* Rotate iPhone Animation */
+.iphone-frame {
+    animation: rotatePhone 8s infinite alternate ease-in-out;
+}
+
+@keyframes rotatePhone {
+    0% { transform: rotate(105deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+/* Button Hover Effects */
+.btn-warning {
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn-warning:hover {
+    background-color: #ff9800 !important;
+    transform: scale(1.05);
+}
